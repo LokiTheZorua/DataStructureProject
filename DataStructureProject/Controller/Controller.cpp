@@ -19,10 +19,7 @@ void Controller:: start()
     codeTimer.displayInformation();
     codeTimer.resetTimer();
     codeTimer.startTimer();
-    for (int index = 0; index < 50000; index++)
-    {
-        cout << "Index is " << index << "\t";
-    }
+    vector<CrimeData> myData = FileController :: readCrimeDataToVector("/Users/ajon6781/Documents/Afternoon Swift/DataStructureProject/DataStructureProject/Data/crime.csv");
     codeTimer.stopTimer();
     codeTimer.displayInformation();
 }
