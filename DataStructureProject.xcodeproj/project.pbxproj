@@ -63,7 +63,6 @@
 		89E67995202243450034A986 /* DataStructureProject */ = {
 			isa = PBXGroup;
 			children = (
-				89E679A4202246E10034A986 /* Tools */,
 				89E6799D202243F10034A986 /* Runner.cpp */,
 				89E6799F202244300034A986 /* Controller */,
 			);
@@ -73,6 +72,7 @@
 		89E6799F202244300034A986 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				89E679A4202246E10034A986 /* Tools */,
 				89E679A0202244430034A986 /* Controller.cpp */,
 				89E679A1202244430034A986 /* Controller.hpp */,
 			);
