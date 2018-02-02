@@ -19,5 +19,8 @@ class Controller
 {
 public:
     void start();
+    
+private:
+    void findMaxAndMin();
 };
 #endif /* Controller_hpp */
