@@ -9,7 +9,7 @@
 #ifndef Array_hpp
 #define Array_hpp
 
-#include <stdio.h>
+
 #include <assert.h>
 #include <iostream>
 
@@ -51,7 +51,7 @@ template <class Type>
 Array<Type> :: Array(const Array<Type> & toCopy)
 {
     this->size = toCopy.getSize();
-    
+    //Build data Structure
     internalArray = new Type[size];
     
     for(int index = 0; index < size; index++)
@@ -85,14 +85,14 @@ Array<Type> & Array<Type> :: operator = (const Array<Type> & toAssign)
     return *this;
 }
 
-template <class Type>
+template <class Type> // type referance is on the left side of the = sign
 Type & Array<Type> :: operator[] (int index)
 {
     assert(index >= 0 && index < size);
     return internalArray[index];
 }
 
-template <class Type>
+template <class Type> ///Rit hand side of = sign
 Type Array<Type> :: operator [] (int index) const
 {
     assert(index >= 0 && index < size);

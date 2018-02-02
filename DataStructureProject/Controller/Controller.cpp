@@ -19,9 +19,9 @@ void Controller:: start()
     codeTimer.displayInformation();
     codeTimer.resetTimer();
     codeTimer.startTimer();
-    
+
     vector<CrimeData> myData = FileController :: readCrimeDataToVector("/Users/ajon6781/Documents/Afternoon Swift/DataStructureProject/DataStructureProject/Data/crime.csv");
-    
+
     for (int index = 200; index< 215; index++)
     {
         cout << index << " is " << myData[index] << endl;
@@ -30,6 +30,8 @@ void Controller:: start()
     codeTimer.displayInformation();
     
     findMaxAndMin();
+    
+    testArray();
 }
 
 void Controller :: findMaxAndMin()
@@ -59,6 +61,11 @@ void Controller :: findMaxAndMin()
     cout << "The smallest Crime is at " << minIndex << " and it is: " << myData[minIndex] << endl;
     cout << "The largest crime is at " << maxIndex << " and it is: " << myData[maxIndex] << endl;
     searchTimer.displayInformation();
+}
+
+void Controller :: testArray()
+{
+    
 }
 
 
