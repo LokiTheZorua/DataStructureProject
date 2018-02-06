@@ -12,6 +12,10 @@ using namespace std;
 
 void Controller:: start()
 {
+    ArrayTester myTest;
+    myTest.testArrayUse();
+    myTest.testAdvancedArray();
+    
 //    Timer codeTimer;
 //    codeTimer.startTimer();
 //    cout << "Look code on the screen" << endl;
@@ -29,9 +33,9 @@ void Controller:: start()
 //    codeTimer.stopTimer();
 //    codeTimer.displayInformation();
     
-    findMaxAndMin();
-    
-    testArray();
+//    findMaxAndMin();
+//
+//    testArray();
 }
 
 void Controller :: findMaxAndMin()

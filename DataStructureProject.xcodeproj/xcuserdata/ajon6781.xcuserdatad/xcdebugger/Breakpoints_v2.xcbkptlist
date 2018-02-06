@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DataStructureProject/Model/Structures/Array.hpp"
-            timestampString = "539637918.84848"
+            timestampString = "539640476.33411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -25,8 +25,8 @@
                   symbolName = "Array&lt;int&gt;::Array(int)"
                   moduleName = "DataStructureProject"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ajon6781/Documents/Afternoon%20Swift/DataStructureProject/DataStructureProject/Controller/../Model/Structures/Array.hpp"
-                  timestampString = "539637919.250692"
+                  urlString = "file:///Users/ajon6781/Documents/Afternoon%20Swift/DataStructureProject/DataStructureProject/Controller/../Testers/../Model/Structures/Array.hpp"
+                  timestampString = "539640476.6688811"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
@@ -37,31 +37,16 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Array&lt;int&gt;::Array(Array&lt;int&gt; const&amp;)"
+                  symbolName = "Array&lt;CrimeData&gt;::Array(int)"
                   moduleName = "DataStructureProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ajon6781/Documents/Afternoon%20Swift/DataStructureProject/DataStructureProject/Testers/../Model/Structures/Array.hpp"
-                  timestampString = "539637919.25375"
+                  timestampString = "539640476.670511"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Array&lt;int&gt;::Array(Array&lt;int&gt; const&amp;)"
-                  moduleName = "DataStructureProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ajon6781/Documents/Afternoon%20Swift/DataStructureProject/DataStructureProject/Testers/../Model/Structures/Array.hpp"
-                  timestampString = "539637919.255546"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "20">
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
          </BreakpointContent>
