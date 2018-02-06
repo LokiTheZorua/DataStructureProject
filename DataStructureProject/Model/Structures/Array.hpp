@@ -42,7 +42,7 @@ template <class Type>
 Array<Type> :: Array(int size)
 {
     assert(size > 0);
-    this->size = size;
+    this->size = size;  // this is the same as this. but it is a selector
     
     internalArray = new Type[size];
 }

@@ -12,22 +12,22 @@ using namespace std;
 
 void Controller:: start()
 {
-    Timer codeTimer;
-    codeTimer.startTimer();
-    cout << "Look code on the screen" << endl;
-    codeTimer.stopTimer();
-    codeTimer.displayInformation();
-    codeTimer.resetTimer();
-    codeTimer.startTimer();
-
-    vector<CrimeData> myData = FileController :: readCrimeDataToVector("/Users/ajon6781/Documents/Afternoon Swift/DataStructureProject/DataStructureProject/Data/crime.csv");
-
-    for (int index = 200; index< 215; index++)
-    {
-        cout << index << " is " << myData[index] << endl;
-    }
-    codeTimer.stopTimer();
-    codeTimer.displayInformation();
+//    Timer codeTimer;
+//    codeTimer.startTimer();
+//    cout << "Look code on the screen" << endl;
+//    codeTimer.stopTimer();
+//    codeTimer.displayInformation();
+//    codeTimer.resetTimer();
+//    codeTimer.startTimer();
+//
+//    vector<CrimeData> myData = FileController :: readCrimeDataToVector("/Users/ajon6781/Documents/Afternoon Swift/DataStructureProject/DataStructureProject/Data/crime.csv");
+//
+//    for (int index = 200; index< 215; index++)
+//    {
+//        cout << index << " is " << myData[index] << endl;
+//    }
+//    codeTimer.stopTimer();
+//    codeTimer.displayInformation();
     
     findMaxAndMin();
     
@@ -50,7 +50,11 @@ void Controller :: findMaxAndMin()
         {
             minIndex = index;
         }
-        
+        else if(myData [minIndex] == myData[index])
+        {
+            int tieNumber = 0;
+            tieNumber++;
+        }
         else if (myData [maxIndex] < myData[index])
         {
             maxIndex = index;
@@ -65,7 +69,9 @@ void Controller :: findMaxAndMin()
 
 void Controller :: testArray()
 {
+    Array<int> exampleArray(20);
     
+    cout << exampleArray.getSize() << endl;
 }
 
 
