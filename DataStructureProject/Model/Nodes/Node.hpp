@@ -18,23 +18,29 @@ protected:
     
 public:
     Node();
-    Nope(Type data);
-    void setData(TypeD data);
+    Node(Type data);
+    void setData(Type data);
     Type getData();
 };
 
 template <class Type>
+Node<Type> :: Node()
 {
-    
     
 }
 template <class Type>
-Node <Type> :: Node (Type data)
+ Node<Type> :: Node(Type data)
 {
-    this-> data = data;
+    this->data = data;
 }
 
-tempalte <class Type>
+template <class Type>
+void Node<Type> :: setData(Type data)
+{
+    this->data = data;
+}
+
+template <class Type>
 Type Node<Type> :: getData()
 {
     return data;

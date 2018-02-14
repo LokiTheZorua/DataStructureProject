@@ -20,7 +20,7 @@ protected:
 public:
     LinearNode();
     LinearNode(Type data);
-    LinearNOde(Type data, LinearNode<Type> * next);
+    LinearNode(Type data, LinearNode<Type> * next);
     
     void setNextNode(LinearNode<Type> * next);
     LinearNode<Type> * getNextNode();

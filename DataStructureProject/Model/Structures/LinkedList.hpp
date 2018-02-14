@@ -7,23 +7,23 @@
 //
 
 #include "List.hpp"
-#include "LinearNode.hpp"
+#include "../Nodes/LinearNode.hpp"
 
 using namespace std;
 
-#ifndef LinkedLIst_h
-#define LinkedLIst_h
+#ifndef LinkedList_h
+#define LinkedList_h
 
-template <class type>
+template <class Type>
 
-class LinkedLIst : public List<type>
+class LinkedList : public List<Type>
 {
 protected:
     LinearNode<Type> * front;
     LinearNode<Type> * end;
     
 public:
-    LinkedLIst();
+    LinkedList();
     
     virtual ~LinkedList();
     
@@ -35,15 +35,15 @@ public:
     void addAtIndex(int index, Type item);
     Type getFromIndex(int index);
     Type remove(int index);
-}
-
+};
+template <class Type>
 LinkedList<Type> :: LinkedList()
 {
     this->front = nullptr;
     this->end = nullptr;
     this->Size = 0;
 }
-
+template <class Type>
 LinkedList<Type> :: ~LinkedList()
 {
     LinearNode<Type> * destroyStructure = front;
@@ -51,11 +51,11 @@ LinkedList<Type> :: ~LinkedList()
     {
         front = destroyStructure->getNextNode();
         delete destroyStructure;
-        destroyScructure = front;
+        destroyStructure = front;
     }
 }
-
-void LinkedLIst<Type> :: add(Type item)
+template <class Type>
+void LinkedList<Type> :: add(Type item)
 {
     LinkedList<Type> * newData = new LinearNode<Type>(item);
     
@@ -72,8 +72,8 @@ void LinkedLIst<Type> :: add(Type item)
     
     this->size += 1;
 }
-
-void LinkedList<Type> :: addAt Index(int index, Type item)
+template <class Type>
+void LinkedList<Type> :: addAtIndex(int index, Type item)
 {
     assert(index >= 0 && index <= this->size);
     if(index == this->size)
@@ -103,16 +103,16 @@ void LinkedList<Type> :: addAt Index(int index, Type item)
         this->size++;
     }
 }
-
-Type LinkedLIst<Type> :: remove(int index)
+template <class Type>
+Type LinkedList<Type> :: remove(int index)
 {
     assert(index >= 0  && index < this->size);
     
     LinearNode<Type> * current = front;
     LinearNode<Type> * toBeRemoved = nullptr;
-    LinearNode<Type> * previous = nullptr:
+    LinearNode<Type> * previous = nullptr;
     
-    Type removeData;
+    Type removedData;
     
     if (index == 0)
     {
@@ -121,10 +121,10 @@ Type LinkedLIst<Type> :: remove(int index)
     }
     else
     {
-        for (int positiont = 0; position < index; positiont++)
+        for (int position = 0; position < index; position++)
         {
             previous = current;
-            current current->getNextNode();
+            current->getNextNode();
         }
         
         toBeRemoved = current;
@@ -146,17 +146,18 @@ Type LinkedLIst<Type> :: remove(int index)
     delete toBeRemoved;
     return removedData;
 }
-
+template <class Type>
 LinearNode<Type> * LinkedList<Type> :: getEnd()
 {
     return this->end;
 }
-
+template <class Type>
 LinearNode<Type> * LinkedList<Type> :: getFront()
 {
     return this->end;
 }
-LinearNode<Type> * LinkedList<Type> :: getsize() const
+template <class Type>
+int LinkedList<Type> :: getSize() const
 {
     return this->size;
 }
