@@ -41,7 +41,7 @@ LinkedList<Type> :: LinkedList()
 {
     this->front = nullptr;
     this->end = nullptr;
-    this->Size = 0;
+    this->size = 0;
 }
 template <class Type>
 LinkedList<Type> :: ~LinkedList()
@@ -57,7 +57,7 @@ LinkedList<Type> :: ~LinkedList()
 template <class Type>
 void LinkedList<Type> :: add(Type item)
 {
-    LinkedList<Type> * newData = new LinearNode<Type>(item);
+    LinearNode<Type> * newData = new LinearNode<Type>(item);
     
     if(this->size == 0)
     {
@@ -104,6 +104,44 @@ void LinkedList<Type> :: addAtIndex(int index, Type item)
     }
 }
 template <class Type>
+Type LinkedList<Type> :: getFromIndex(int index)
+{
+    assert(index >= 0 && index < this->size);
+    
+    LinearNode<Type>* current = front;
+    LinearNode<Type>* nodeToGet = nullptr;
+    LinearNode<Type>* previous = nullptr;
+    
+    Type data;
+    
+    if(index == 0)
+    {
+        nodeToGet = front;
+    }
+    else
+    {
+        for(int position = 0; position <index; position++)
+        {
+            previous = current;
+            current = current->getNextNode();
+        }
+        
+        nodeToGet = current;
+        if(index == this->size -1)
+        {
+            end = previous;
+        }
+        else
+        {
+            current = nodeToGet->getNextNode();
+        }
+    }
+    
+    data = nodeToGet->getData();
+    return data;
+}
+
+template <class Type>
 Type LinkedList<Type> :: remove(int index)
 {
     assert(index >= 0  && index < this->size);
@@ -137,7 +175,7 @@ Type LinkedList<Type> :: remove(int index)
         else
         {
             current = toBeRemoved->getNextNode();
-            previous->setNextNOde(current);
+            previous->setNextNode(current);
         }
     }
     this->size -= 1;
@@ -151,11 +189,13 @@ LinearNode<Type> * LinkedList<Type> :: getEnd()
 {
     return this->end;
 }
+
 template <class Type>
 LinearNode<Type> * LinkedList<Type> :: getFront()
 {
     return this->end;
 }
+
 template <class Type>
 int LinkedList<Type> :: getSize() const
 {

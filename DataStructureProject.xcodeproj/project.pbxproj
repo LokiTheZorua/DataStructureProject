@@ -13,6 +13,7 @@
 		89E679A7202246FD0034A986 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89E679A5202246FD0034A986 /* Timer.cpp */; };
 		89E679AA20224D160034A986 /* FileController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89E679A820224D160034A986 /* FileController.cpp */; };
 		89E679AF20224EEF0034A986 /* CrimeData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89E679AE20224EEF0034A986 /* CrimeData.cpp */; };
+		89FF8B172034D3BC0014ACEE /* LinkedListTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 89FF8B152034D3BC0014ACEE /* LinkedListTester.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,8 @@
 		89E679AD20224EEF0034A986 /* crime.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crime.csv; sourceTree = "<group>"; };
 		89E679AE20224EEF0034A986 /* CrimeData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CrimeData.cpp; sourceTree = "<group>"; };
 		89E93D382024EE610085DA80 /* Array.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Array.hpp; sourceTree = "<group>"; };
+		89FF8B152034D3BC0014ACEE /* LinkedListTester.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedListTester.cpp; sourceTree = "<group>"; };
+		89FF8B162034D3BC0014ACEE /* LinkedListTester.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinkedListTester.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 			children = (
 				89C5B2DB202A33F8007BE386 /* ArrayTester.cpp */,
 				89C5B2DC202A33F8007BE386 /* ArrayTester.hpp */,
+				89FF8B152034D3BC0014ACEE /* LinkedListTester.cpp */,
+				89FF8B162034D3BC0014ACEE /* LinkedListTester.hpp */,
 			);
 			path = Testers;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				89E679AF20224EEF0034A986 /* CrimeData.cpp in Sources */,
 				89E6799E202243F10034A986 /* Runner.cpp in Sources */,
 				89E679A2202244430034A986 /* Controller.cpp in Sources */,
+				89FF8B172034D3BC0014ACEE /* LinkedListTester.cpp in Sources */,
 				89C5B2DD202A33F8007BE386 /* ArrayTester.cpp in Sources */,
 				89E679AA20224D160034A986 /* FileController.cpp in Sources */,
 			);
