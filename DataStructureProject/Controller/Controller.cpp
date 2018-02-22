@@ -16,6 +16,11 @@ void Controller:: start()
     myTest.testArrayUse();
     myTest.testAdvancedArray();
     
+    LinkedListTester thisTest;
+    thisTest.testListBasics();
+    thisTest.testListWithData();
+    
+    
 //    Timer codeTimer;
 //    codeTimer.startTimer();
 //    cout << "Look code on the screen" << endl;
