@@ -47,6 +47,8 @@
 		89E679AD20224EEF0034A986 /* crime.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crime.csv; sourceTree = "<group>"; };
 		89E679AE20224EEF0034A986 /* CrimeData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CrimeData.cpp; sourceTree = "<group>"; };
 		89E93D382024EE610085DA80 /* Array.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Array.hpp; sourceTree = "<group>"; };
+		89FAB051203F4D05009C97BA /* Queue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Queue.hpp; sourceTree = "<group>"; };
+		89FAB052203F4D1B009C97BA /* Stack.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stack.hpp; sourceTree = "<group>"; };
 		89FF8B152034D3BC0014ACEE /* LinkedListTester.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedListTester.cpp; sourceTree = "<group>"; };
 		89FF8B162034D3BC0014ACEE /* LinkedListTester.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinkedListTester.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,11 +155,21 @@
 		89E93D362024EE370085DA80 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				89FAB050203F4C25009C97BA /* Linear */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
+		89FAB050203F4C25009C97BA /* Linear */ = {
+			isa = PBXGroup;
+			children = (
 				89E93D382024EE610085DA80 /* Array.hpp */,
 				891E2EF8202CE2E500130A78 /* List.hpp */,
 				890AFCDF2034B9CC00B94057 /* LinkedList.hpp */,
+				89FAB051203F4D05009C97BA /* Queue.hpp */,
+				89FAB052203F4D1B009C97BA /* Stack.hpp */,
 			);
-			path = Structures;
+			path = Linear;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
