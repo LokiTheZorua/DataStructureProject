@@ -15,7 +15,8 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-#include "../Model/Structures/LinkedList.hpp"
+#include "../Model/Structures/Linear/LinkedList.hpp"
+
 
 using namespace std;
 
