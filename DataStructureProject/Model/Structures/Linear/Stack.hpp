@@ -44,7 +44,7 @@ Stack<Type> :: Stack() : LinkedList<Type>()
 template <class Type>
 Stack<Type> :: ~Stack()
 {
-    while<this->size > 0)
+    while(this->size > 0)
     {
         pop();
     }
@@ -55,9 +55,9 @@ void Stack<Type> :: push(Type data)
 {
     LinearNode<Type> * add = new LinearNode<Type>(data);
     
-    if<this->size == 0)
+    if(this->size == 0)
     {
-        this-> = add;
+        this->end= add;
     }
     else
     {
