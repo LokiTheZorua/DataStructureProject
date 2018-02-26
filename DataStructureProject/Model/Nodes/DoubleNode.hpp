@@ -45,5 +45,35 @@ DoubleNode<Type< :: DoubleNode(Type data) : Node<Type>(data)
     next = nullptr;
 }
 
+template <class Type>
+DoubleNode<Type> :: DoubleNOde(Type data, DoubleNode<Type> *privous, DoubleNode<Type>* next) : Node<Type>(data)
+{
+    this->previous = previous;
+    this->next = next;
+}
+
+template <class Type>
+void DoubleNode<Type> :: setNext(DoubleNode<Type>* next)
+{
+    this->next= next;
+}
+
+template <class Type>
+void DoubleNode<Type> :: setPrevious(DoubleNode<Type* previous)
+{
+    this->previous = previous;
+}
+
+template <class Type>
+DoubleNode<Type> * DoubleNode<Type> :: getPrevious()
+{
+    return previous;
+}
+
+template <class Type>
+DoubleNode<Type> * DoubleNode<Type> :: getNext()
+{
+    return next;
+}
 
 #endif /* DoubleNode_h */
