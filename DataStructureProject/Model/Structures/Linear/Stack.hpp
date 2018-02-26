@@ -13,6 +13,8 @@
 
 #endif /* Stack_h */
 
+using namespace std;
+
 template <class Type>
 class Stack : public LinkedList<Type>
 {
