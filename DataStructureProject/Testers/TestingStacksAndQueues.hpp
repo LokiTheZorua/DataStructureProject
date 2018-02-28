@@ -20,7 +20,7 @@
 
 using namespace std;
 
-class TestingStacksAndNodes
+class TestingStacksAndQueues
 {
 public:
     void stackVersusList();
