@@ -12,14 +12,17 @@ using namespace std;
 
 void Controller:: start()
 {
-    ArrayTester myTest;
-    myTest.testArrayUse();
-    myTest.testAdvancedArray();
-    
-    LinkedListTester thisTest;
-    thisTest.testListBasics();
-    thisTest.testListWithData();
-    
+    RecursionTester test;
+    test.testRecursionNumbers();
+    test.testRecursionString();
+//    ArrayTester myTest;
+//    myTest.testArrayUse();
+//    myTest.testAdvancedArray();
+//
+//    LinkedListTester thisTest;
+//    thisTest.testListBasics();
+//    thisTest.testListWithData();
+//
     
 //    Timer codeTimer;
 //    codeTimer.startTimer();
