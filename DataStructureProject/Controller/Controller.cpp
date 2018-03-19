@@ -12,9 +12,14 @@ using namespace std;
 
 void Controller:: start()
 {
-    RecursionTester test;
-    test.testRecursionNumbers();
-    test.testRecursionString();
+    SortingTester test;
+    test.testSorts();
+    
+    
+//    RecursionTester test;
+//    test.testRecursionNumbers();
+//    test.testRecursionString();
+    
 //    ArrayTester myTest;
 //    myTest.testArrayUse();
 //    myTest.testAdvancedArray();

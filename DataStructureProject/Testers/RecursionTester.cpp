@@ -26,13 +26,10 @@ string RecursionTester :: mystery(string word)
     {
         return word;
     }
-    
     else
     {
-      return word + mystery(word.substr(0, word.length() - 1));
-        
+        return word + mystery(word.substr(0, word.length() - 1));
     }
-        
 }
 
 void RecursionTester :: testRecursionNumbers()
