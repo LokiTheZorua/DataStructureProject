@@ -17,7 +17,7 @@ template <class Type>
 class Graph
 {
 private:
-    static const int MAXIMUM = 20;
+    static const int MAXIMUM = 50;
     bool adjacencyMatrix [MAXIMUM][MAXIMUM];
     int weightCostMatrix [MAXIMUM][MAXIMUM];
     Type graphData[MAXIMUM];
@@ -50,8 +50,8 @@ public:
     
     //Traversals
     void depthFirstTraversal(Graph<Type> & graph, int vertex);
-    void breadthFirestTraversal(Graph<Type> * graph, int vertex);
-    int costTracersal(Graph<Type> & graph, int vertex);
+    void breadthFirstTraversal(Graph<Type> & graph, int vertex);
+    int costTraversal(Graph<Type> & graph, int vertex);
 };
 
 
@@ -59,8 +59,9 @@ template <class Type>
 const int Graph<Type> :: MAXIMUM;
 
 template <class Type>
+Graph<Type> :: Graph()
 {
-    int->vertexCount = 0;
+    this->vertexCount = 0;
 }
 
 template <class Type>
@@ -71,7 +72,7 @@ int Graph<Type> :: size() const
 
 
 //Left hand operator
-template <classType>
+template <class Type>
 Type& Graph<Type> :: operator[](int vertex)
 {
     assert(vertex < vertexCount);
@@ -90,7 +91,7 @@ Type Graph<Type> :: operator[](int vertex) const
 template <class Type>
 void Graph<Type> :: addVertex(const Type& value)
 {
-    assert(vertexCount< MAXIMUM);
+    assert(vertexCount < MAXIMUM);
     int newVertexNumber = vertexCount;
     vertexCount++;
     
@@ -105,7 +106,7 @@ void Graph<Type> :: addVertex(const Type& value)
 
 
 template <class Type>
-void Graph<Type> :: removedEdge(int source, target)
+void Graph<Type> :: removeEdge(int source, int target)
 {
     assert(source >= 0 && source < vertexCount && target >= 0 && target < vertexCount);
     adjacencyMatrix[source][target] = false;
@@ -129,7 +130,7 @@ void Graph<Type> :: removeEdgeCost(int source, int target)
 template <class Type>
 void Graph<Type> :: addEdge(int source, int target)
 {
-    assert(source >= 0 && source < vertex && target >= 0 && target < vertexCount);
+    assert(source >= 0 && source < vertexCount && target >= 0 && target < vertexCount);
     adjacencyMatrix[source][target] = true;
 }
 
@@ -150,9 +151,9 @@ void Graph<Type> :: addEdgeCost(int source, int target, int cost)
 }
 
 template <class Type>
-bool Graph<Type> :: hasUndirectedConnnection(int source, int target) const
+bool Graph<Type> :: hasUndirectedConnection(int source, int target) const
 {
-    assert(source >= 0 && souce < vertexCount && target >= 0 && target < vertexCount);
+    assert(source >= 0 && source < vertexCount && target >= 0 && target < vertexCount);
     
     bool isAnEdge = false;
     isAnEdge = adjacencyMatrix[source][target] || adjacencyMatrix[target][source];
@@ -163,7 +164,7 @@ bool Graph<Type> :: hasUndirectedConnnection(int source, int target) const
 template <class Type>
 bool Graph<Type> :: areConnected(int source, int target) const
 {
-    assert(source >= 0 && < vertexCount && target >= 0 && target < vertexCount);
+    assert(source >= 0 && source < vertexCount && target >= 0 && target < vertexCount);
     
     bool isAnEdge = false;
     isAnEdge = adjacencyMatrix[source][target];
@@ -188,12 +189,12 @@ std::set<int> Graph<Type> :: neighbors(int vertex) const
 }
 
 template <class Type>
-void Graph<Type> :: depthFirstTraversal(Grpah<Type> & currentGraph,int vertex)
+void Graph<Type> :: depthFirstTraversal(Graph<Type> & currentGraph,int vertex)
 {
     bool visitedVertices[MAXIMUM];
-    assert(vertex < currentGraphs.size());
+    assert(vertex < currentGraph.size());
     std::fill_n(visitedVertices, currentGraph.size(),false);
-    depthFirstTraversal(currentGraph, vertex, vistedVertices);
+    depthFirstTraversal(currentGraph, vertex, visitedVertices);
 }
 
 template <class Type>
@@ -202,10 +203,10 @@ void Graph<Type> :: depthFirstTraversal(Graph<Type> & currentGraph, int vertex, 
     std::set<int> connections = currentGraph.neighbors(vertex);
     std::set<int>::iterator setIterator;
     
-    vistited[vertex] = true;
+    visited[vertex] = true;
     cout << currentGraph[vertex] << ", " << endl;
     
-    for(setIterator + connections.begin(); setIterator != connections.end(); setIterator++)
+    for(setIterator = connections.begin(); setIterator != connections.end(); setIterator++)
     {
         if(!visited[*setIterator])
         {
@@ -215,33 +216,64 @@ void Graph<Type> :: depthFirstTraversal(Graph<Type> & currentGraph, int vertex, 
 }
 
 template <class Type>
-int Graph<Type> :: costTracersal(Graph<Type> & currentGraph, int vertex)
+void Graph<Type> :: breadthFirstTraversal(Graph<Type> & currentGraph, int vertex)
 {
-    assert(start >= 0 && start < vertexCount);
-    int cost = 0;
+    assert(vertex < currentGraph.size());
     bool visited[MAXIMUM];
     std::set<int> connections;
-    std::set<int>::interator setIterator;
+    std::set<int>::iterator setIterator;
     std::queue<int> vertexQueue;
     
-    std::fill_n(visited,currentGraph.size(),false);
+    std::fill_n(visited, currentGraph.size(),false);
     visited[vertex] = true;
-    
-    vertexQueue.push(vertex);
-    visited[vertex] = true;
-    
+    cout<< currentGraph[vertex] << endl;
     vertexQueue.push(vertex);
     while (!vertexQueue.empty())
     {
-        connections = currentGraph.neighbors(verteQueue.front());
-        vertex.pop();
+        connections = currentGraph.neighbors(vertexQueue.front());
+        vertexQueue.pop();
         
         for(setIterator = connections.begin(); setIterator != connections.end(); setIterator++)
         {
             if(!visited[*setIterator])
             {
-                cost += weightCostMatrix[vertex][*setIterator];
-                vidiyrf[*setIterator] ture;
+                visited[*setIterator] = true;
+                cout << currentGraph[*setIterator] << endl;
+                vertexQueue.push(*setIterator);
+            }
+            
+        }
+    }
+}
+
+template <class Type>
+int Graph<Type> :: costTraversal(Graph<Type> & currentGraph, int start)
+{
+    assert(start >= 0 && start < vertexCount);
+    int cost = 0;
+    bool visited[MAXIMUM];
+    std::set<int> connections;
+    std::set<int>::iterator setIterator;
+    std::queue<int> vertexQueue;
+    
+    std::fill_n(visited,currentGraph.size(),false);
+    visited[start] = true;
+    
+    vertexQueue.push(start);
+    visited[start] = true;
+    
+    vertexQueue.push(start);
+    while (!vertexQueue.empty())
+    {
+        connections = currentGraph.neighbors(vertexQueue.front());
+        vertexQueue.pop();
+        
+        for(setIterator = connections.begin(); setIterator != connections.end(); setIterator++)
+        {
+            if(!visited[*setIterator])
+            {
+                cost += weightCostMatrix[start][*setIterator];
+                visited[*setIterator] = true;
                 vertexQueue.push(*setIterator);
             }
         }
@@ -250,36 +282,7 @@ int Graph<Type> :: costTracersal(Graph<Type> & currentGraph, int vertex)
     return cost;
 }
 
-template <class Type>
-void Graph<Type> :: breathFirstTraversal(Graph<Type> & currentGraph, int vertex)
-{
-    assert(vertex < currentGraph.size());
-    bool visited[MAXIMUM];
-    std::set<int> connections;
-    std::set<int>::iterator setIterator;
-    std::queue<int> vertexQueue;
-    
-    set::fill_n(visisted, currentGraph.size(),false);
-    visited[vertex] = true;
-    cout<< currentGraph[vertex] << endl;
-    vertexQueue.push(vertex);
-    while (!vertexQueue.empty())
-    {
-        connections = currentGraph.begin(); setIterator != connections.end(); setIterator++)
-        vertexQueue.pop();
-        
-        for(setIterator = connections.being(); setIterator != connections.end(0; setIterator++)
-            {
-                if(!visisted[*setIterator])
-                {
-                    visisted[*setIterator] = true;
-                    cout << currentGraph[*setIterator] << endl;
-                    vertexQueue.push(*setIterator);
-                }
-                
-            }
-    }
-}
+
     
 
 #endif /* Graph_h */
