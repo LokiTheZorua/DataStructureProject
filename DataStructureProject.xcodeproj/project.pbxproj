@@ -43,6 +43,10 @@
 		891AC2FD2060363C0028DCCA /* Graph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Graph.hpp; sourceTree = "<group>"; };
 		891E2EF8202CE2E500130A78 /* List.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = List.hpp; sourceTree = "<group>"; };
 		891E2EFB202CE58B00130A78 /* LinearNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinearNode.hpp; sourceTree = "<group>"; };
+		892A4C19206AC345005B1E5B /* BinaryTreeNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinaryTreeNode.hpp; sourceTree = "<group>"; };
+		892A4C1A206AD437005B1E5B /* Tree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tree.hpp; sourceTree = "<group>"; };
+		894546B4207BEDB80090246F /* BinaryTreeTester.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinaryTreeTester.hpp; sourceTree = "<group>"; };
+		894546B5207BEFEB0090246F /* BinarySearchTree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinarySearchTree.hpp; sourceTree = "<group>"; };
 		89C5B2DB202A33F8007BE386 /* ArrayTester.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayTester.cpp; sourceTree = "<group>"; };
 		89C5B2DC202A33F8007BE386 /* ArrayTester.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayTester.hpp; sourceTree = "<group>"; };
 		89C5B2E1202A4A41007BE386 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				891AC2FD2060363C0028DCCA /* Graph.hpp */,
+				892A4C1A206AD437005B1E5B /* Tree.hpp */,
+				894546B5207BEFEB0090246F /* BinarySearchTree.hpp */,
 			);
 			path = NonLinear;
 			sourceTree = "<group>";
@@ -102,6 +108,7 @@
 				890B0A39205AE95A00CF5125 /* SortingTester.hpp */,
 				89C8BC05206572D9008DE2A2 /* GraphTester.cpp */,
 				89C8BC06206572D9008DE2A2 /* GraphTester.hpp */,
+				894546B4207BEDB80090246F /* BinaryTreeTester.hpp */,
 			);
 			path = Testers;
 			sourceTree = "<group>";
@@ -109,6 +116,7 @@
 		89C5B2DE202A4948007BE386 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				892A4C19206AC345005B1E5B /* BinaryTreeNode.hpp */,
 				89C5B2E1202A4A41007BE386 /* Node.hpp */,
 				891E2EFB202CE58B00130A78 /* LinearNode.hpp */,
 				890A475420448F120011CBEE /* DoubleNode.hpp */,
