@@ -6,10 +6,11 @@
 //  Copyright © 2018 Jones, Alec. All rights reserved.
 //
 
-#ifndef BinaryTreeTester_h
-#define BinaryTreeTester_h
+#ifndef BinaryTreeTester_hpp
+#define BinaryTreeTester_hpp
 
 #include "../Model/Nodes/BinaryTreeNode.hpp"
+#include "../Model/Structures/NonLinear/BinarySearchTree.hpp"
 #include <iostream>
 
 class BinaryTreeTester
@@ -17,7 +18,8 @@ class BinaryTreeTester
 private:
     BinaryTreeNode<int> testNode;
     BinarySearchTree<int> testTree;
-}
+public:
+    void doTreeStuff();
+};
 
-
-#endif /* BinaryTreeTester_h */
+#endif /* BinaryTreeTester_hpp */
