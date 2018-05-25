@@ -10,6 +10,8 @@
 #define Hashtable_h
 
 #include "../Nodes/HashNode.hpp"
+#include <cmath>
+#include <assert.h>
 
 template <class Type>
 class Hashtable
@@ -23,8 +25,8 @@ private:
     long getNextPrime();
     bool isPrime(long current);
     void resize();
-    long findPosition(HashNode<Type>* insdertedNode);
-    long handleCollision(HashNode<Type>* insertedNode, long index);
+    long findPosition(HashNode<Type>* insertedNode);
+    long handleCollision(long currentPosition);
     
 public:
     Hashtable();
@@ -32,6 +34,9 @@ public:
     
     void insert(Type data);
     long getSize();
+    
+    HashNode<Type> * get(long index);
+    bool contains(HashNode<Type> * value);
 }
 
 template <class Type>
@@ -52,45 +57,153 @@ Hashtable<Type> :: ~Hashtable()
 template <class Type>
 bool Hashtable<Type> :: isPrime(long current)
 {
-    return false;
+    if(curret <= 1)
+    {
+        return false;
+    }
+    else if(current == 2 || current == 3)
+    {
+        return true;
+    }
+    else if(current % 2 == 0)
+    {
+        return false
+    }
+    else
+    {
+        for(int next = 3; next <= sqrt(current) +1; next+= 2)
+        {
+            if(current %S next ==0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 template <class Type>
 long Hashtable<Type> :: findPosition(HashNode<Type> * insert)
 {
-    return -1;
+    long insertPosition = insert->getKey() % this->capacity;
+    return insertPosition;
+    
 }
 
 template <class Type>
-long Hashtable<Type> :: handleCOllision(HashNode<Type> * current, long index)
+long Hashtable<Type> :: handleCollision(long currentPosition)
 {
-    return -1;
+    long shift = 17;
+    
+    for (long position = current position + shift; position != currentPosition; position += shift)
+    {
+        if(position >= capacity)
+        {
+            position = position % capacity
+        }
+        
+        if(internalStorage[position] == nullptr)
+        {
+            return position;
+        }
+    }
+    return long;
 }
 
 template <class Type>
 long Hashtable<Type> :: getSize();
 {
-    return -1;
+    return this->size;
 }
 
 template <class Type>
 long Hashtable :: getNextPrime()
 {
-    return -1;
+    long nextPrime = (this->capacity * 2) + 1;
+    
+    while(!isPrime(nextPrime))
+    {
+        nextPrime += 2;
+    }
+    
+    return nextPrime;
 }
 
 template <class Type>
 void Hashtable<Type> :: resize()
 {
+    long updatedCapacity = getNextPrime();
+    HashNode<Type> ** tempStorage = new HashNode<Type> * [updatedCapacity];
     
+    std :: fill_n(tempStorage, updatedCapacity, nullptr);
+    
+    long oldCapacity = this->capacity;
+    this->capacity = updateCapacity;
+    
+    for(long index = 0; index < oldCapacity; index++)
+    {
+        if(internalStorage[index] != nullptr)
+        {
+            HashNode<Type> * temp = internalStorage[index];
+            
+            long position = findPosition(temp);
+            if ( tempStorage[position] == nullptr)
+            {
+                tempStorage[position] = nullptr;
+            }
+            else
+            {
+                long updatedPosition = handleCollision(position);
+                if (updatedPosition != -1)
+                {
+                    tempStorage[updatedPosition] = temp;
+                }
+            }
+        }
+    }
+    internalStorage = tempStorage;
 }
 
 template <class Type>
 void Hashtable<Type> :: insert(Type value)
 {
-    
+    this->size++;
+    if(((this->size * 1.000) / this->capacity) > this->loadFactor)
+    {
+        resize();
+    }
+    else
+    {
+        long updatedPosition = handleCollision(index);
+        if (updatedPosition != -1)
+        {
+            internal[updatePosition] = temp;
+        }
+    }
 }
 
+template <class Type>
+HashNode<Type> * Hashtable<Type> :: get(long index)
+{
+    assert(index < capacity);
+    return internalStorage[index];
+}
+
+template <class Type>
+bool Hashtable<Type> :: contains(HashNode<Type> * value)
+{
+    if (internalStorage[findPosition(value)]->getData() == value->getData())
+    {
+        return true;
+    }
+    
+    long other = handleCollision(findPosition(value));
+    if (internalStorage[other]->getData() == value->getData())
+    {
+        return true;
+    }
+    return false;
+}
 
 
 #endif /* HashTable_h */

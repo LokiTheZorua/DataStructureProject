@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>110</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>HashNode&lt;Type&gt;
+-
+
+- key : long
+
+--
+
++ HashNode()
++ HashNode(Type data)
+
++ getKey() const : long</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>30</y>
+      <w>400</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>Hashtable&lt;Type&gt;
+--
+
+- size : long
+- cpacity : long
+- loadFactor : double
+
+- getNextPrime() : long
+- isPrime(long current) : bool
+- resize() : void
+- findPosition(HashNode&lt;Type&gt;* insertedNode) : long
+- handleCollision(long currentPosition) : long
+
+--
+
++ Hashtable()
++ ~Hashtable()
+
++ insert(Type data) : void
++ getSize() : long
+
++ HashNode&lt;Type&gt; * get(long index) 
++ bool contains(HashNode&lt;Type&gt; * value) : bool
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>450</y>
+      <w>240</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Node&lt;Type&gt;
+--
+
+#data : Type
+
+--
+
++Node : constructor
++Node(Type data) : constructor
++getData() : Type
++setData(Type Data) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>200</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>270</y>
+      <w>30</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
